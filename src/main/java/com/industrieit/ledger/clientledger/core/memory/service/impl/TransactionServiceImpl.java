@@ -19,7 +19,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     public TransactionResult getLastResult(){
         Iterable<TransactionResult> all = transactionResultRepository.findAll();
-        if (Iterables.isEmpty(all)){
+        if (all == null || Iterables.isEmpty(all)){
             return null;
         }
         return Collections.max(Lists.newArrayList(all), (o1, o2) -> {

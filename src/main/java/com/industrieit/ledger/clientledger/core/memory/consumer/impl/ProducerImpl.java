@@ -18,7 +18,7 @@ public class ProducerImpl implements Producer {
     private final TransactionResultRepository transactionResultRepository;
     private final ObjectMapper objectMapper;
     private final KafkaTemplate<String, TransactionResult> kafkaTemplate;
-    private static final String TOPIC = "Transaction_Result_Redis";
+    private static final String TOPIC = "Transaction_Result_Memory";
 
 
 
