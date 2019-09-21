@@ -5,7 +5,6 @@ import com.industrieit.ledger.clientledger.core.memory.entity.JournalEntry;
 
 
 public interface JournalEntryRepository {
-    Iterable<JournalEntry> findAllByAccountId(String accountId);
 
     <S extends JournalEntry> Iterable<S> saveAll(Iterable<S> iterable);
 

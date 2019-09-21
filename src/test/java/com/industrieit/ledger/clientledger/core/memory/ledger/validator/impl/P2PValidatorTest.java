@@ -57,8 +57,6 @@ public class P2PValidatorTest {
         JournalEntry journalEntry = new JournalEntry();
         journalEntry.setAmount(BigDecimal.valueOf(-3));
         journalEntries.add(journalEntry);
-        Mockito.when(journalEntryRepository.findAllByAccountId(nullable(String.class)))
-                .thenReturn(journalEntries);
         P2PRequest p2PTransaction = new P2PRequest("USD", "12345",
                 "23456", "34567", "45678", BigDecimal.valueOf(100), BigDecimal.valueOf(10), BigDecimal.valueOf(5));
         p2PValidator.validate("1234567", p2PTransaction);
@@ -85,8 +83,6 @@ public class P2PValidatorTest {
         JournalEntry journalEntry = new JournalEntry();
         journalEntry.setAmount(BigDecimal.valueOf(-7));
         journalEntries.add(journalEntry);
-        Mockito.when(journalEntryRepository.findAllByAccountId(nullable(String.class)))
-                .thenReturn(journalEntries);
         P2PRequest p2PTransaction = new P2PRequest("USD", "12345",
                 "23456", "34567", "45678", BigDecimal.valueOf(100), BigDecimal.valueOf(10), BigDecimal.valueOf(5));
         p2PValidator.validate("1234567", p2PTransaction);
@@ -221,8 +217,6 @@ public class P2PValidatorTest {
         JournalEntry journalEntry = new JournalEntry();
         journalEntry.setAmount(BigDecimal.valueOf(-7));
         journalEntries.add(journalEntry);
-        Mockito.when(journalEntryRepository.findAllByAccountId(nullable(String.class)))
-                .thenReturn(journalEntries);
         P2PRequest p2PTransaction = new P2PRequest("USD", "12345",
                 "23456", "34567", "45678", BigDecimal.valueOf(100), BigDecimal.valueOf(10), BigDecimal.valueOf(5));
         p2PValidator.validate("1234567", p2PTransaction);
@@ -246,8 +240,6 @@ public class P2PValidatorTest {
         JournalEntry journalEntry = new JournalEntry();
         journalEntry.setAmount(BigDecimal.valueOf(-7));
         journalEntries.add(journalEntry);
-        Mockito.when(journalEntryRepository.findAllByAccountId(nullable(String.class)))
-                .thenReturn(journalEntries);
         P2PRequest p2PTransaction = new P2PRequest("USD", "12345",
                 "23456", "34567", "45678", BigDecimal.valueOf(100), BigDecimal.valueOf(10), BigDecimal.valueOf(5));
         p2PValidator.validate("1234567", p2PTransaction);
@@ -271,8 +263,6 @@ public class P2PValidatorTest {
         JournalEntry journalEntry = new JournalEntry();
         journalEntry.setAmount(BigDecimal.valueOf(-7));
         journalEntries.add(journalEntry);
-        Mockito.when(journalEntryRepository.findAllByAccountId(nullable(String.class)))
-                .thenReturn(journalEntries);
         P2PRequest p2PTransaction = new P2PRequest("USD", "12345",
                 "23456", "34567", "45678", BigDecimal.valueOf(100), BigDecimal.valueOf(10), BigDecimal.valueOf(5));
         p2PValidator.validate("1234567", p2PTransaction);
@@ -296,8 +286,6 @@ public class P2PValidatorTest {
         JournalEntry journalEntry = new JournalEntry();
         journalEntry.setAmount(BigDecimal.valueOf(-7));
         journalEntries.add(journalEntry);
-        Mockito.when(journalEntryRepository.findAllByAccountId(nullable(String.class)))
-                .thenReturn(journalEntries);
         P2PRequest p2PTransaction = new P2PRequest("USD", "12345",
                 "23456", "34567", "45678", BigDecimal.valueOf(100), BigDecimal.valueOf(10), BigDecimal.valueOf(5));
         p2PValidator.validate("1234567", p2PTransaction);
@@ -324,8 +312,6 @@ public class P2PValidatorTest {
         JournalEntry journalEntry = new JournalEntry();
         journalEntry.setAmount(BigDecimal.valueOf(150));
         journalEntries.add(journalEntry);
-        Mockito.when(journalEntryRepository.findAllByAccountId(nullable(String.class)))
-                .thenReturn(journalEntries);
         P2PRequest p2PTransaction = new P2PRequest("USD", "12345",
                 "23456", "34567", "45678", BigDecimal.valueOf(100), BigDecimal.valueOf(10), BigDecimal.valueOf(5));
         p2PValidator.validate("1234567", p2PTransaction);
