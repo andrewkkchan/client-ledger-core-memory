@@ -4,29 +4,35 @@ import com.industrieit.ledger.clientledger.core.memory.entity.JournalEntry;
 import com.industrieit.ledger.clientledger.core.memory.repository.JournalEntryRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class JournalEntryRepositoryImpl implements JournalEntryRepository {
-    private  final Map<String, JournalEntry> journalEntries = new HashMap<>();
+    private final List<JournalEntry> journalEntries = new ArrayList<>();
 
 
     @Override
     public <S extends JournalEntry> Iterable<S> saveAll(Iterable<S> iterable) {
-        for (JournalEntry journalEntry : iterable){
-            journalEntries.put(journalEntry.getRequestId(), journalEntry);
+        for (JournalEntry journalEntry : iterable) {
+            journalEntries.add(journalEntry);
         }
         return iterable;
     }
 
     @Override
     public Iterable<JournalEntry> findAllByRequestId(String requestId) {
-        return journalEntries.values();
+        List<JournalEntry> result = new ArrayList<>();
+        for (JournalEntry journalEntry : journalEntries) {
+            if (journalEntry.getRequestId().equals(requestId)) {
+                result.add(journalEntry);
+            }
+        }
+        return result;
     }
 
     @Override
     public Iterable<JournalEntry> findAll() {
-        return journalEntries.values();
+        return journalEntries;
     }
 }
